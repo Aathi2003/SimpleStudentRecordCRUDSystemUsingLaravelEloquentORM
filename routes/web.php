@@ -28,3 +28,5 @@ Route::middleware(['validate'])->group(function () {
     Route::post('/add', [AddStudent::class,'store']);
     Route::post('/update', [AddStudent::class,'update']);
 });
+
+Route::get('/view_profile', [AddStudent::class , 'view']);

@@ -103,4 +103,9 @@ class AddStudent extends Controller
         $student->delete();
        return redirect('/view')->with('delete','Record deleted successfully');
     }
+
+    public static function view(Request $req){
+        $profile=Studentdb::where('email',$req->email)->first();
+        return view('layout.view_prof',['view_data' => $profile]);
+    }
 }

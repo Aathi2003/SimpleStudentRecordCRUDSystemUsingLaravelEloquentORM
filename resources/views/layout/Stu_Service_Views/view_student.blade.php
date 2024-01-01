@@ -47,7 +47,7 @@
         <h6 class="text-center" id="mod_info"><strong>Warning : </strong></h6>
      </div>
 
-    <table class="w-100 mb-3">
+    <table class="w-100 ">
         <tr>
         <th>id</th>
         <th>name</th>
@@ -56,7 +56,7 @@
         <th>email</th>
         <th>address</th>
         <th>photos</th>
-        <th colspan="2">Operations</th>
+        <th colspan="3">Operations</th>
         </tr>
 
             @foreach ($alldatas as $data)
@@ -70,6 +70,7 @@
                     <td><img src="picture\{{$data->image}}" width="70px" height="120px" alt="{{$data->name}}"></td>
                     <td><button  data-bs-toggle="modal" data-bs-target="#editModal" onclick="edibtn('{{$data->email}}')" id="edibtn"><img src="icons\edit.svg" width="30px" height="30px" alt="edit"></button></td>
                     <td><a href="{{url('/trash')}}?email={{$data->email}}"><img src="icons\delete.svg" width="30px" height="30px" alt="delete"></a></td>
+                    <td><a href="{{url('/view_profile')}}?email={{$data->email}}"><img src="icons\vieweye.svg" width="30px" height="30px" alt="delete"></a></td>
                    </tr>
 
             @endforeach
